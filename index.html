@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenova6 | Calm Power. Sixth Level.</title>
+  <meta name="description" content="Zenova6 — Calm Power. Sixth Level of Innovation. A fusion of balance, technology, and futuristic design." />
+  <meta property="og:title" content="Zenova6" />
+  <meta property="og:description" content="Calm Power. Sixth Level of Innovation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zenova6.github.io/" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/889/889440.png" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; scroll-behavior: smooth; }
 
     body {
       background: radial-gradient(circle at top right, #0d0d0d, #000);
@@ -19,41 +20,63 @@
       overflow-x: hidden;
     }
 
+    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
       position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 10;
+      top: 0; width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 100;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1.5s forwards;
     }
 
-    .logo span {
-      color: #00ffff;
+    .logo span { color: #00ffff; }
+
+    nav {
+      display: flex;
+      gap: 25px;
     }
 
     nav a {
-      margin-left: 25px;
       color: #ddd;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: #00ffff;
+    nav a:hover { color: #00ffff; }
+
+    /* Mobile nav button */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
     }
 
+    .menu-btn span {
+      width: 25px;
+      height: 3px;
+      background: #00ffff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .nav-active { display: flex !important; flex-direction: column; background: rgba(0,0,0,0.9); position: absolute; top: 70px; right: 30px; padding: 20px; border-radius: 10px; }
+
+    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -81,6 +104,9 @@
       margin-top: 15px;
       font-size: 1.2rem;
       color: #ccc;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 2s 0.6s forwards;
     }
 
     .hero button {
@@ -94,6 +120,9 @@
       font-weight: 600;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 2s 1s forwards;
     }
 
     .hero button:hover {
@@ -101,6 +130,7 @@
       box-shadow: 0 0 25px #00ffff55;
     }
 
+    /* SECTIONS */
     section {
       padding: 100px 60px;
       text-align: center;
@@ -117,18 +147,17 @@
       background: rgba(255, 255, 255, 0.05);
       padding: 40px;
       border-radius: 20px;
-      transition: transform 0.3s, background 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s;
     }
 
-    .feature:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.1);
+    .feature.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .feature h3 {
-      color: #00ffff;
-      margin-bottom: 10px;
-    }
+    .feature h3 { color: #00ffff; margin-bottom: 10px; }
 
     footer {
       text-align: center;
@@ -138,11 +167,27 @@
       font-size: 0.9rem;
       border-top: 1px solid #111;
     }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header { padding: 15px 30px; }
+      nav { display: none; }
+      .menu-btn { display: flex; }
+      .hero h1 { font-size: 2.8rem; }
+      section { padding: 80px 20px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Zenova<span>6</span></div>
+    <div class="menu-btn" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
     <nav>
       <a href="#home">Home</a>
       <a href="#features">Features</a>
@@ -162,7 +207,7 @@
     <div class="features">
       <div class="feature">
         <h3>Balanced Design</h3>
-        <p>Inspired by calmness and precision — every curve, every detail perfected for harmony.</p>
+        <p>Inspired by calmness and precision — every detail perfected for harmony.</p>
       </div>
       <div class="feature">
         <h3>Powerful Technology</h3>
@@ -178,8 +223,8 @@
   <section id="about">
     <h2>About Zenova6</h2>
     <p style="max-width: 700px; margin: 30px auto; color: #bbb;">
-      Zenova6 is a symbol of balance and brilliance — a fusion of calm focus and dynamic innovation. 
-      Designed for creators, dreamers, and thinkers who believe in pushing limits while staying grounded.
+      Zenova6 represents a new dimension of innovation — a blend of tranquility and technology. 
+      Designed for creators, thinkers, and dreamers who seek balance in brilliance.
     </p>
   </section>
 
@@ -188,9 +233,25 @@
   </footer>
 
   <script>
+    // Mobile nav toggle
+    function toggleMenu() {
+      const nav = document.querySelector("nav");
+      nav.classList.toggle("nav-active");
+    }
+
+    // Smooth scroll
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+
+    document.querySelectorAll('.feature').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
