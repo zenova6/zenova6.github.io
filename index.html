@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenova6 | Calm Power. Sixth Level.</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top right, #0d0d0d, #000);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #00ffff;
+    }
+
+    nav a {
+      margin-left: 25px;
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffff33; }
+      to { text-shadow: 0 0 25px #00ffff99; }
+    }
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .hero button {
+      margin-top: 35px;
+      padding: 14px 36px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(90deg, #00ffff, #0077ff);
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ffff55;
+    }
+
+    section {
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .feature h3 {
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Zenova<span>6</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Zenova<span>6</span></h1>
+    <p>Calm Mind. Sixth Level of Innovation.</p>
+    <button onclick="scrollToSection('features')">Explore More</button>
+  </section>
+
+  <section id="features">
+    <h2>Our Core Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Balanced Design</h3>
+        <p>Inspired by calmness and precision — every curve, every detail perfected for harmony.</p>
+      </div>
+      <div class="feature">
+        <h3>Powerful Technology</h3>
+        <p>Where Zen meets velocity — optimized performance for the modern world.</p>
+      </div>
+      <div class="feature">
+        <h3>Next-Level Innovation</h3>
+        <p>The Sixth evolution of creativity — bold, beautiful, and built for the future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Zenova6</h2>
+    <p style="max-width: 700px; margin: 30px auto; color: #bbb;">
+      Zenova6 is a symbol of balance and brilliance — a fusion of calm focus and dynamic innovation. 
+      Designed for creators, dreamers, and thinkers who believe in pushing limits while staying grounded.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Zenova6. All rights reserved.
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
